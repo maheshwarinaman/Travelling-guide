@@ -1,0 +1,187 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical-9</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .header {
+            width: 100%;
+            height: 70px;
+            display:flex;
+            background-color:firebrick;
+            justify-content: space-evenly;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .header h2 {
+            line-height: 70px;
+            float: left;
+            text-transform: uppercase;
+            color: white;
+        }
+
+        .header .menu {
+            list-style: none;
+            text-align: center;
+        }
+
+        .menu li {
+            display: inline-block;
+            line-height: 70px;
+        }
+        .home{
+            margin-bottom: 20px;
+        }
+
+        .menu li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            text-transform: uppercase;
+            transition: .4s;
+            width:200px;
+            display:block;
+        }
+
+        .menu li a:hover{
+            background-color:darkslategrey; 
+        }
+        .home img{
+            width: 100%;
+            height:100%;
+        }
+        .destination h1{
+            text-align: center;
+        }
+        .city {
+            width: 30%;
+            margin: 20px 20px;
+            border-radius: 7px;
+            padding: 15px;
+            box-shadow: 0px 5px 5px darkgrey;
+            background-color: white;
+
+        }
+
+        .city h4 {
+            margin: 0px 10px;
+            text-align: center;
+        }
+
+        .city img {
+            width: 100%;
+            margin-bottom: 10px;
+            border-radius: 8px;
+        }
+
+        .city a:hover {
+            background-color: blue;
+        }
+
+        .city a {
+            display: block;
+            background-color: red;
+            text-decoration: none;
+            color: white;
+            margin: auto;
+            text-align: center;
+            border-radius: 8px;
+            padding: 10px;
+            }
+        .city p{
+            line-height: 1.4;
+        }
+        .destination::after{
+        content: '';
+        display: block;
+        clear: both;
+        }
+        #city::after{
+            content: '';
+        display: block;
+        clear: both;  
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h2>Travelling Guide</h2>
+        <ul class="menu">
+            <li><a href="#">home</a></li>
+            <li><a href="#">Destinations</a></li>
+            <li><a href="#">Ticket Booking</a>
+            <li><a href="#">Hotels Booking</a></li>
+        </ul>
+    </div>
+    <div class="home">
+            <img src="../image/HomeTravel.PNG" alt="Torism Of India">
+    </div>
+    <div class="destination">
+        <h1>DESTINATIONS</h1>
+            <div class="city" style="float: left;">
+                <img src="..\image\Kashmir.jpg" style="height: 230px;" alt="HTML">
+                <h4>kASHMIR</h4>
+                <p style="text-align: justify;">Hypertext Markup Language (HTML) is the standard markup language for documents
+                    designed to be displayed in a web browser. It can be assisted by technologies such as Cascading Style Sheets
+                    (CSS) and scripting languages
+                    such as JavaScript.</p>
+                <a href="html.html">Read More</a>
+        
+            </div>
+            <div class="city" style="float: left;">
+                <img src="..\image\Chennai.jpg" style="height: 230px;" alt="CSS">
+                <h4>CHENNAI</h4>
+                <p style="text-align: justify;">Cascading Style Sheets (CSS) is a style sheet language used for describing the
+                    presentation of a document written in a markup language like HTML. CSS is a cornerstone technology of the
+                    World Wide Web, alongside HTML and JavaScript.</p>
+                <a href="css.html">Read More</a>
+            </div>
+            <div class="city" style="float: left;">
+                <img src="..\image\mumbai.jpg" style="height: 230px;" alt="JAVASCRIPT">
+                <h4>MUMBAI</h4>
+                <p style="text-align: justify;">JavaScript often abbreviated as JS, is a programming
+                    language that conforms to the ECMAScript specification. JavaScript is high-level, often just-in-time
+                    compiled, and multi-paradigm. It has curly-bracket syntax, dynamic typing.Javascript is widely used.</p>
+                <a href="javascript.html">Read More</a>
+            </div>
+            <div class="city" style="float: left;">
+                <img src="..\image\Jaipur.jpg" style="height: 230px;" alt="BOOTSTRAP">
+                <h4>JAIPUR</h4>
+                <p style="text-align: justify;">Bootstrap is a free and open-source CSS framework directed at responsive,
+                    mobile-first front-end web development. It contains CSS- and (optionally) JavaScript-based design templates
+                    for typography, forms, buttons, navigation  and other interface components.</p>
+                <a href="boot.html">Read More</a>
+            </div>
+            <div class="city" style="float: left;">
+                <img src="..\image\nanital.jpg" style="height: 230px;" alt="BOOTSTRAP">
+                <h4>NANITAL</h4>
+                <p style="text-align: justify;">Bootstrap is a free and open-source CSS framework directed at responsive,
+                    mobile-first front-end web development. It contains CSS- and (optionally) JavaScript-based design templates
+                    for typography, forms, buttons, navigation  and other interface components.</p>
+                <a href="boot.html">Read More</a>
+            </div>
+            <div class="city" style="float: left;">
+                <img src="..\image\Kolkata.jpg" style="height: 230px;" alt="BOOTSTRAP">
+                <h4>KOLKATA</h4>
+                <p style="text-align: justify;">Bootstrap is a free and open-source CSS framework directed at responsive,
+                    mobile-first front-end web development. It contains CSS- and (optionally) JavaScript-based design templates
+                    for typography, forms, buttons, navigation  and other interface components.</p>
+                <a href="boot.html">Read More</a>
+            </div>
+    </div>
+
+</body>
+
+</html>
