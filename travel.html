@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,32 +5,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Practical-9</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         * {
             padding: 0;
             margin: 0;
             box-sizing: border-box;
             font-family: Arial, Helvetica, sans-serif;
+
         }
 
-        .header {
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 70px;
+        }
+
+        #header {
             width: 100%;
             height: 70px;
-            display:flex;
-            background-color:firebrick;
+            display: flex;
+            background-color: brown;
             justify-content: space-evenly;
             align-items: center;
-            margin-bottom: 8px;
+            position: fixed;
+            top: 0;
+            z-index: 2;
         }
 
-        .header h2 {
+        #header h2 {
             line-height: 70px;
             float: left;
             text-transform: uppercase;
             color: white;
+            font-size: 30px;
         }
 
-        .header .menu {
+        #header .menu {
             list-style: none;
             text-align: center;
         }
@@ -39,9 +48,11 @@
         .menu li {
             display: inline-block;
             line-height: 70px;
+            position: relative;
         }
-        .home{
-            margin-bottom: 20px;
+
+        #home {
+            margin-top: 76px;
         }
 
         .menu li a {
@@ -50,27 +61,59 @@
             font-size: 18px;
             text-transform: uppercase;
             transition: .4s;
-            width:200px;
-            display:block;
+            width: 160px;
+            display: block;
         }
 
-        .menu li a:hover{
-            background-color:darkslategrey; 
+        li a i {
+            font-size: 20px;
+            color: white;
+            padding-right: 7px;
         }
-        .home img{
+
+        .menu li a:hover {
+            background-color: darkslategrey;
+        }
+
+        .submenu1 {
+            position: absolute;
+            background-color: firebrick;
+            width: 160px;
+            left: 0;
+            display: none;
+        }
+
+        .menu li:hover .submenu1 {
+            display: block;
+        }
+
+        #home img {
             width: 100%;
-            height:100%;
+            height: 100%;
         }
-        .destination h1{
+
+        #destination {
+            background-image: url(destinationimg.jpg);
+            background-attachment: fixed;
+            background-size: cover;
+            margin-bottom: 10px;
+
+        }
+
+        #destination h1 {
             text-align: center;
+            padding: 20px;
+            color: white;
+            font-size: 40px;
         }
+
         .city {
-            width: 30%;
-            margin: 20px 20px;
+            width: 25%;
+            margin: 50px 60px;
             border-radius: 7px;
             padding: 15px;
             box-shadow: 0px 5px 5px darkgrey;
-            background-color: white;
+            background-color: #36D9AA;
 
         }
 
@@ -86,100 +129,349 @@
         }
 
         .city a:hover {
-            background-color: blue;
+            background-color: #043225;
         }
 
         .city a {
             display: block;
-            background-color: red;
+            background-color: #0E6D52;
             text-decoration: none;
             color: white;
             margin: auto;
             text-align: center;
             border-radius: 8px;
             padding: 10px;
-            }
-        .city p{
+        }
+
+        .city p {
             line-height: 1.4;
         }
-        .destination::after{
-        content: '';
-        display: block;
-        clear: both;
+
+        .hotelsite {
+            width: 260px;
+            height: 260px;
+            display: inline-block;
+            margin: 40px;
         }
-        #city::after{
+
+        #destination::after {
             content: '';
-        display: block;
-        clear: both;  
+            display: block;
+            clear: both;
+        }
+
+        #hotel {
+            background-image: url(hotelbg.jpg);
+            background-attachment: fixed;
+            background-size: cover;
+            padding: 30px;
+        }
+
+        #hotel h1 {
+            color: white;
+            text-align: center;
+        }
+
+        #about {
+
+            background-color: #04052E;
+            font-size: 40px;
+            margin-top: 8px;
+            width: 100%;
+        }
+
+        #about h2 {
+            position: absolute;
+            color: white;
+            top: 38px;
+            padding: 20px;
+
+        }
+
+        #about::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        .left {
+            display: flex;
+            float: left;
+            width: 58%;
+            margin: 8px 8px 8px 0px;
+            padding: 8px;
+            height: 87%;
+            color: red;
+            background-color: #07A2A5;
+
+        }
+
+        .left p {
+            font-size: 18px;
+            text-align: justify;
+            color: white;
+            margin: 20px;
+            line-height: 1.5;
+
+        }
+
+        .history {
+            width: 100%;
+            height: 173px;
+            display: flex;
+            justify-content: center;
+            text-align: left;
+            position: relative;
+            z-index: 1;
+
+
+        }
+
+        #about img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .culture {
+            width: 100%;
+            height: 173px;
+            display: flex;
+            justify-content: center;
+            text-align: left;
+            position: relative;
+            background-color: white;
+            margin: 11px 0;
+            z-index: 1;
+
+        }
+
+        .festival {
+            width: 100%;
+            height: 173px;
+            display: flex;
+            justify-content: center;
+            text-align: left;
+            position: relative;
+            z-index: 1;
+
+        }
+
+        .right {
+            float: right;
+            width: 40%;
+            background-color: #04052E;
+            height: 87%;
+            margin: 8px 8px 8px 8px;
+
+        }
+
+        .right::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        #vehicle {
+            background-image: url(vehicle.jpg);
+            background-attachment: fixed;
+            background-size: cover;
+            padding: 30px;
+            margin-top: 10px;
+        }
+
+        #vehicle img {
+            width: 260px;
+            height: 260px;
+            display: inline-block;
+            margin: 40px;
+            border-radius: 10px;
+        }
+
+        #vehicle h1 {
+            color: white;
+            text-align: center;
+        }
+
+        #contact {
+            margin-top: 10px;
+            padding: 20px;
+            background-image: url(contact.jpg);
+        }
+
+        #contact h3 {
+            text-align: center;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        #contact h4 {
+            text-align: center;
+            text-decoration: none;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            color: yellow;
         }
     </style>
 </head>
 
 <body>
-    <div class="header">
-        <h2>Travelling Guide</h2>
+    <div id="header">
+        <h2>Indian Travelling Guide</h2>
         <ul class="menu">
-            <li><a href="#">home</a></li>
-            <li><a href="#">Destinations</a></li>
-            <li><a href="#">Ticket Booking</a>
-            <li><a href="#">Hotels Booking</a></li>
+            <li><a href="#"><i class="fa fa-home"></i>home</a></li>
+            <li><a href="#destination"><i class="fa fa-plane"></i>Destinations</a></li>
+            <li><a href="#"><i class="fa fa-book"></i>Booking</a>
+                <ul class="submenu1">
+                    <li><a href="#hotel"><i class="fa fa-bed"></i>HOTEL</a></li>
+                    <li><a href="#vehicle"><i class="fa fa-taxi"></i>VEHICLE</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class="fa fa-money"></i>Payment</a>
+                <ul class="submenu1">
+                    <li><a href="https://paytm.com"><i class="fa fa-paypal"></i>PAYTM</a></li>
+                    <li><a href="https://pay.google.com/gp/w/u/0/home/activity?sctid=7112280128671377"> <i
+                                class="fa fa-google"></i>GOOGLE PAY</a>
+                    </li>
+                    <li><a href="https://www.phonepe.com/"><i class="fa fa-google-wallet"></i>PHONE PE</a></li>
+                    <li><a href="https://www.bhimupi.org.in/"><i class="fa fa-credit-card-alt"></i>BHIM UPI</a></li>
+                </ul>
+            </li>
+            <li><a href="#about"><i class="fa fa-globe"></i>About India</a></li>
+            <li><a href="#contact"><i class="fa fa-whatsapp"></i>Contact</a></li>
         </ul>
     </div>
-    <div class="home">
-            <img src="HomeTravel.PNG" alt="Torism Of India">
+    <div id="home">
+        <img src="HomeTravel.PNG" alt="Torism Of India">
     </div>
-    <div class="destination">
+    <div id="about">
+        <h3 style="text-align: center; color: white;">About INDIA</h3>
+        <div class="left">
+            <p> One of the oldest civilisations in the world, India is a mosaic of multicultural experiences. With a
+                rich
+                heritage and myriad attractions, the country is among the most popular tourist destinations in the
+                world. It covers an area of 32, 87,263 sq. km, extending from the snow-covered Himalayan heights to the
+                tropical rain forests of the south. As the 7th largest country in the world, India stands apart from the
+                rest of Asia, marked off as it is by mountains and the sea, which give the country a distinct
+                geographical entity. <br>
+                The Indian culture varies like its vast geography. People speak in different languages, dress
+                differently, follow different religions, eat different food but are of the same temperament. So whether
+                it is a joyous occasion or a moment of grief, people participate whole-heartedly, feeling the happiness
+                or pain. A festival or a celebration is never constrained to a family or a home. The whole community or
+                neighbourhood is involved in bringing liveliness to an occasion. <br>
+                The Republic of India is the seventh largest country in the world by area and, with over a billion
+                people, is second only to China in population, although its much higher birth-rate makes it likely to
+                reach pole position in less than ten years. <br>
+                It is an extremely diverse country, with vast differences in geography, climate, culture, language and
+                ethnicity across its expanse, and prides itself on being the largest democracy on Earth and a hub of
+                trade in Southeast Asia. India provides a vast canvass for touring whether it may be cultural,
+                adventure, religious, history, beach, wildlife and other forms.
+
+            </p>
+        </div>
+        <div class="right">
+            <div class="history">
+                <h2>HISTORY</h2><a href="https://en.wikipedia.org/wiki/History_of_India"><img src="history.jpg"
+                        alt=""></a>
+            </div>
+            <div class="culture">
+                <h2>CULTURE</h2> <a href="https://en.wikipedia.org/wiki/Culture_of_India"><img style="width: 583px;"
+                        src="culture.jpg" alt=""></a>
+            </div>
+            <div class="festival">
+                <h2>FESTIVAL</h2><a href="https://en.wikipedia.org/wiki/List_of_festivals_in_India"><img
+                        src="festival.jpg" alt=""></a>
+            </div>
+        </div>
+    </div>
+    <div id="destination">
         <h1>DESTINATIONS</h1>
-            <div class="city" style="float: left;">
-                <img src="Kashmir.jpg" style="height: 230px;" alt="HTML">
-                <h4>kASHMIR</h4>
-                <p style="text-align: justify;">Hypertext Markup Language (HTML) is the standard markup language for documents
-                    designed to be displayed in a web browser. It can be assisted by technologies such as Cascading Style Sheets
-                    (CSS) and scripting languages
-                    such as JavaScript.</p>
-                <a href="html.html">Read More</a>
-        
-            </div>
-            <div class="city" style="float: left;">
-                <img src="Chennai.jpg" style="height: 230px;" alt="CSS">
-                <h4>CHENNAI</h4>
-                <p style="text-align: justify;">Cascading Style Sheets (CSS) is a style sheet language used for describing the
-                    presentation of a document written in a markup language like HTML. CSS is a cornerstone technology of the
-                    World Wide Web, alongside HTML and JavaScript.</p>
-                <a href="css.html">Read More</a>
-            </div>
-            <div class="city" style="float: left;">
-                <img src="mumbai.jpg" style="height: 230px;" alt="JAVASCRIPT">
-                <h4>MUMBAI</h4>
-                <p style="text-align: justify;">JavaScript often abbreviated as JS, is a programming
-                    language that conforms to the ECMAScript specification. JavaScript is high-level, often just-in-time
-                    compiled, and multi-paradigm. It has curly-bracket syntax, dynamic typing.Javascript is widely used.</p>
-                <a href="javascript.html">Read More</a>
-            </div>
-            <div class="city" style="float: left;">
-                <img src="Jaipur.jpg" style="height: 230px;" alt="BOOTSTRAP">
-                <h4>JAIPUR</h4>
-                <p style="text-align: justify;">Bootstrap is a free and open-source CSS framework directed at responsive,
-                    mobile-first front-end web development. It contains CSS- and (optionally) JavaScript-based design templates
-                    for typography, forms, buttons, navigation  and other interface components.</p>
-                <a href="boot.html">Read More</a>
-            </div>
-            <div class="city" style="float: left;">
-                <img src="nanital.jpg" style="height: 230px;" alt="BOOTSTRAP">
-                <h4>NANITAL</h4>
-                <p style="text-align: justify;">Bootstrap is a free and open-source CSS framework directed at responsive,
-                    mobile-first front-end web development. It contains CSS- and (optionally) JavaScript-based design templates
-                    for typography, forms, buttons, navigation  and other interface components.</p>
-                <a href="boot.html">Read More</a>
-            </div>
-            <div class="city" style="float: left;">
-                <img src="Kolkata.jpg" style="height: 230px;" alt="BOOTSTRAP">
-                <h4>KOLKATA</h4>
-                <p style="text-align: justify;">Bootstrap is a free and open-source CSS framework directed at responsive,
-                    mobile-first front-end web development. It contains CSS- and (optionally) JavaScript-based design templates
-                    for typography, forms, buttons, navigation  and other interface components.</p>
-                <a href="boot.html">Read More</a>
-            </div>
+        <div class="city" style="float: left;">
+            <img src="Kashmir.jpg" style="height: 230px;" alt="HTML">
+            <h4>kASHMIR</h4>
+            <p style="text-align: justify;">Jammu and Kashmir is a union territory of India locked in Himalayan
+                Mountains. Jammu and Kashmir is home to several Valleys such as the Kashmir Valley, Chenab Valley, Sindh
+                Valley and Lidder Valley. Some major tourist attractions in Kashmir are Srinagar,
+                Gulmarg, Pahalgam, Patnitop, Sanasar,Jai Valley,
+                Chinta Valley, Akhnoor and Jammu.Kashmir is known as the heaven of world.</p>
+            <a href="http://www.jktourism.jk.gov.in/">Read More</a>
+
+        </div>
+        <div class="city" style="float: left;">
+            <img src="Chennai.jpg" style="height: 230px;" alt="CSS">
+            <h4>CHENNAI</h4>
+            <p style="text-align: justify;">
+                Chennai is the capital of the Indian state Tamil Nadu. With its historic landmarks and buildings, long
+                sandy beaches, cultural and art centers and parks, Chennai's tourism offers many potentially interesting
+                locations to visitors. The city was 43rd most visited city in the world for year 2015 and recorded
+                growth of 10 percent in arrivals over 2014.The major attractions are temples.
+            </p>
+            <a href="https://en.wikipedia.org/wiki/List_of_tourist_attractions_in_Chennai">Read More</a>
+        </div>
+        <div class="city" style="float: left;">
+            <img src="mumbai.jpg" style="height: 230px;" alt="JAVASCRIPT">
+            <h4>MUMBAI</h4>
+            <p style="text-align: justify;">.Mumbai is a home of Maharaj Chhatrapati Shivaji,on of the greatest hero of
+                India.Tourism in Mumbai is an industry that attracts almost 6 million tourists per
+                year, making it the 30th-most visited location worldwide.[1] According to United Nations, as of 2018,
+                Mumbai was the second most populous city in India after Delhi and the seventh most populous city in the
+                world</p>
+            <a href="https://en.wikipedia.org/wiki/Tourism_in_Mumbai">Read More</a>
+        </div>
+        <div class="city" style="float: left;">
+            <img src="Jaipur.jpg" style="height: 230px;" alt="BOOTSTRAP">
+            <h4>JAIPUR</h4>
+            <p style="text-align: justify;">Jaipur is a major tourist destination in India forming a part of the Golden
+                Triangle. Jaipur was ranked the 7th best
+                place to visit in Asia. According to TripAdvisor Jaipur ranked 1st among the Indian destinations for
+                the year. The Presidential Suite at the Raj
+                Palace Hotel, billed at US$45,000 per night, was listed in second place on CNN's World's 15 most
+                expensive hotel suites in 2012.</p>
+            <a href="https://en.wikipedia.org/wiki/Jaipur">Read More</a>
+        </div>
+        <div class="city" style="float: left;">
+            <img src="nanital.jpg" style="height: 230px;" alt="BOOTSTRAP">
+            <h4>NANITAL</h4>
+            <p style="text-align: justify;">
+                Commonly known as the “Lake District of India”, Nainital is one of the most beautiful hill stations in
+                North India. Surrounded by mountains on three sides Nainital is located around the beautiful lake Naini
+                Tal. This lake resort is situated at a height of 1,938 meters. There are many legends associated with
+                the place. According to one, Nainital has derived its name from the Goddess Naina</p>
+            <a href="https://uttarakhandtourism.gov.in/destination/nainital/">Read More</a>
+        </div>
+        <div class="city" style="float: left;">
+            <img src="Kolkata.jpg" style="height: 230px;" alt="BOOTSTRAP">
+            <h4>KOLKATA</h4>
+            <p style="text-align: justify;">
+                Kolkata also rendered Calcutta the official name until 2001) is the capital of the Indian state of West
+                Bengal, located on the eastern bank of the Hooghly River, approximately 80 kilometres (50 mi) west of
+                the border with Bangladesh. The Port of Kolkata is India's oldest operating port and its sole major
+                riverine port. Kolkata is occasionally called the "Cultural capital of India".</p>
+            <a href="https://en.wikipedia.org/wiki/List_of_tourist_attractions_in_Kolkata">Read More</a>
+        </div>
+    </div>
+    <div id="hotel">
+        <h1> FOR HOTEL BOOKING</h1>
+        <a href="https://www.oyorooms.com"> <img class="hotelsite" src="oyo.png" alt=""></a>
+        <a href="https://www.makemytrip.com"><img class="hotelsite" src="makemytrip.png" alt=""></a>
+        <a href="https://www.goibibo.com"> <img class="hotelsite" style="border: solid black; border-radius: 50%;"
+                src="goibibo.png" alt=""></a>
+        <a href="https://www.trivago.in"> <img class="hotelsite" src="trivago.png" alt=""></a>
+
+    </div>
+    <div id="vehicle">
+        <h1> FOR VEHICLE BOOKING</h1>
+        <a href="https://www.redbus.in"> <img src="redbus.jpg" alt=""></a>
+        <a href="https://www.makemytrip.com"><img src="yatra.jpg" alt=""></a>
+        <a href="https://www.olacabs.com/"> <img src="ola.png" alt=""></a>
+        <a href="https://www.uber.com/in/en/"> <img src="uber.png" alt=""></a>
+
+    </div>
+    <div id="contact">
+        <h3 style="color:white;">MAIL: naman.maheshwari_cs18@gla.ac.in</h3> <br>
+        <h3 style="color:white;">PHONE: 91-55555 55555 </h3>
+        <br> <br>
+        <h4>Copyright@Naman 2020-21</h4>
+        <h4><a style="text-decoration: none; color: yellow;" href="#home">Back to Top</a></h4>
+    </div>
     </div>
 
 </body>
