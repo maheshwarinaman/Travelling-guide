@@ -358,7 +358,7 @@ li a i {
     display: inline-block;
     padding:10px;
 }
-@media(max-width: 1378px) {
+@media(max-width: 1408px) {
 
     .show-btn,
     .hide-btn {
@@ -366,6 +366,9 @@ li a i {
     }
     #header{
         padding: 0 20px;
+    }
+    .right h2{
+        font-size: 12px;
     }
 
     .menu {
@@ -388,6 +391,7 @@ li a i {
         display: block;
         text-align: center;
         width:100%;
+        text-align: centre;
     }
 
     .menu li a {
