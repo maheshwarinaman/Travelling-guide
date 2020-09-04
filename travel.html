@@ -6,322 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Indian Traveeling Guide</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-        * {
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-            font-family: Arial, Helvetica, sans-serif;
-
-        }
-
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: 70px;
-        }
-
-        #header {
-            width: 100%;
-            height: 70px;
-            display: flex;
-            background-color: brown;
-            justify-content: space-evenly;
-            align-items: center;
-            position: fixed;
-            top: 0;
-            z-index: 2;
-        }
-
-        #header h2 {
-            line-height: 70px;
-            float: left;
-            text-transform: uppercase;
-            color: white;
-            font-size: 30px;
-        }
-
-        #header .menu {
-            list-style: none;
-            text-align: center;
-        }
-
-        .menu li {
-            display: inline-block;
-            line-height: 70px;
-            position: relative;
-        }
-
-        #home {
-            margin-top: 76px;
-        }
-
-        .menu li a {
-            text-decoration: none;
-            color: white;
-            font-size: 18px;
-            text-transform: uppercase;
-            transition: .4s;
-            width: 160px;
-            display: block;
-        }
-
-        li a i {
-            font-size: 20px;
-            color: white;
-            padding-right: 7px;
-        }
-
-        .menu li a:hover {
-            background-color: darkslategrey;
-        }
-
-        .submenu1 {
-            position: absolute;
-            background-color: firebrick;
-            width: 160px;
-            left: 0;
-            display: none;
-        }
-
-        .menu li:hover .submenu1 {
-            display: block;
-        }
-
-        #home img {
-            width: 100%;
-            height: 100%;
-        }
-
-        #destination {
-            background-image: url(destinationimg.jpg);
-            background-attachment: fixed;
-            background-size: cover;
-            margin-bottom: 10px;
-
-        }
-
-        #destination h1 {
-            text-align: center;
-            padding: 20px;
-            color: white;
-            font-size: 40px;
-        }
-
-        .city {
-            width: 350px;
-            margin: 50px 60px;
-            border-radius: 7px;
-            padding: 15px;
-            box-shadow: 0px 5px 5px darkgrey;
-            background-color: #36D9AA;
-
-        }
-
-        .city h4 {
-            margin: 0px 10px;
-            text-align: center;
-        }
-
-        .city img {
-            width: 100%;
-            margin-bottom: 10px;
-            border-radius: 8px;
-        }
-
-        .city a:hover {
-            background-color: #043225;
-        }
-
-        .city a {
-            display: block;
-            background-color: #0E6D52;
-            text-decoration: none;
-            color: white;
-            margin: auto;
-            text-align: center;
-            border-radius: 8px;
-            padding: 10px;
-        }
-
-        .city p {
-            line-height: 1.4;
-        }
-
-        .hotelsite {
-            width: 260px;
-            height: 260px;
-            display: inline-block;
-            margin: 40px;
-        }
-
-        #destination::after {
-            content: '';
-            display: block;
-            clear: both;
-        }
-
-        #hotel {
-            background-image: url(hotelbg.jpg);
-            background-attachment: fixed;
-            background-size: cover;
-            padding: 30px;
-        }
-
-        #hotel h1 {
-            color: white;
-            text-align: center;
-        }
-
-        #about {
-
-            background-color: #04052E;
-            font-size: 40px;
-            margin-top: 8px;
-            width: 100%;
-        }
-
-        #about h2 {
-            position: absolute;
-            color: white;
-            top: 38px;
-            padding: 20px;
-
-        }
-
-        #about::after {
-            content: '';
-            display: block;
-            clear: both;
-        }
-
-        .left {
-            display: flex;
-            float: left;
-            width: 58%;
-            margin: 8px 8px 8px 0px;
-            padding: 8px;
-            height: 87%;
-            color: red;
-            background-color: #07A2A5;
-
-        }
-
-        .left p {
-            font-size: 18px;
-            text-align: justify;
-            color: white;
-            margin: 20px;
-            line-height: 1.5;
-
-        }
-
-        .history {
-            width: 100%;
-            height: 173px;
-            display: flex;
-            justify-content: center;
-            text-align: left;
-            position: relative;
-            z-index: 1;
-
-
-        }
-
-        #about img {
-            width: 100%;
-            height: 100%;
-        }
-
-        .culture {
-            width: 100%;
-            height: 173px;
-            display: flex;
-            justify-content: center;
-            text-align: left;
-            position: relative;
-            background-color: white;
-            margin: 11px 0;
-            z-index: 1;
-
-        }
-
-        .festival {
-            width: 100%;
-            height: 173px;
-            display: flex;
-            justify-content: center;
-            text-align: left;
-            position: relative;
-            z-index: 1;
-
-        }
-
-        .right {
-            float: right;
-            width: 40%;
-            background-color: #04052E;
-            height: 87%;
-            margin: 8px 8px 8px 8px;
-
-        }
-
-        .right::after {
-            content: '';
-            display: block;
-            clear: both;
-        }
-
-        #vehicle {
-            background-image: url(vehicle.jpg);
-            background-attachment: fixed;
-            background-size: cover;
-            padding: 30px;
-            margin-top: 10px;
-        }
-
-        #vehicle img {
-            width: 260px;
-            height: 260px;
-            display: inline-block;
-            margin: 40px;
-            border-radius: 10px;
-        }
-
-        #vehicle h1 {
-            color: white;
-            text-align: center;
-        }
-
-        #contact {
-            margin-top: 10px;
-            padding: 20px;
-            background-image: url(contact.jpg);
-        }
-
-        #contact h3 {
-            text-align: center;
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        }
-
-        #contact h4 {
-            text-align: center;
-            text-decoration: none;
-            font-family: 'Courier New', Courier, monospace;
-            font-weight: bold;
-            color: yellow;
-        }
-        #contact i{
-            font-size: 30px;
-            color: white;
-            text-align: center;
-            display: inline-block;
-            padding:10px;
-        }
-    </style>
+    <link rel="stylesheet" href="travel.css">
+   
 </head>
 
 <body>
     <div id="header">
+        <input type="checkbox" id="chk">
+        <label for="chk" class="show-btn">
+            <i class="fa fa-bars"></i>
+        </label>
         <h2>Indian Travelling Guide</h2>
         <ul class="menu">
             <li><a href="#"><i class="fa fa-home"></i>home</a></li>
@@ -344,6 +38,9 @@
             </li>
             <li><a href="#about"><i class="fa fa-globe"></i>About India</a></li>
             <li><a href="#contact"><i class="fa fa-whatsapp"></i>Contact</a></li>
+             <label for="chk" class="hide-btn">
+                <i class="fa fa-times"></i>
+            </label>
         </ul>
     </div>
     <div id="home">
@@ -380,7 +77,7 @@
                         alt=""></a>
             </div>
             <div class="culture">
-                <h2>CULTURE</h2> <a href="https://en.wikipedia.org/wiki/Culture_of_India"><img style="width: 583px;"
+                <h2>CULTURE</h2> <a href="https://en.wikipedia.org/wiki/Culture_of_India"><img 
                         src="culture.jpg" alt=""></a>
             </div>
             <div class="festival">
@@ -391,7 +88,8 @@
     </div>
     <div id="destination">
         <h1>DESTINATIONS</h1>
-        <div class="city" style="float: left;">
+        <div class="citycontainer">
+        <div class="city" >
             <img src="Kashmir.jpg" style="height: 230px;" alt="HTML">
             <h4>kASHMIR</h4>
             <p style="text-align: justify;">Jammu and Kashmir is a union territory of India locked in Himalayan
@@ -402,7 +100,7 @@
             <a href="http://www.jktourism.jk.gov.in/">Read More</a>
 
         </div>
-        <div class="city" style="float: left;">
+        <div class="city">
             <img src="Chennai.jpg" style="height: 230px;" alt="CSS">
             <h4>CHENNAI</h4>
             <p style="text-align: justify;">
@@ -413,7 +111,7 @@
             </p>
             <a href="https://en.wikipedia.org/wiki/List_of_tourist_attractions_in_Chennai">Read More</a>
         </div>
-        <div class="city" style="float: left;">
+        <div class="city">
             <img src="mumbai.jpg" style="height: 230px;" alt="JAVASCRIPT">
             <h4>MUMBAI</h4>
             <p style="text-align: justify;">.Mumbai is a home of Maharaj Chhatrapati Shivaji,on of the greatest hero of
@@ -423,7 +121,7 @@
                 world</p>
             <a href="https://en.wikipedia.org/wiki/Tourism_in_Mumbai">Read More</a>
         </div>
-        <div class="city" style="float: left;">
+        <div class="city">
             <img src="Jaipur.jpg" style="height: 230px;" alt="BOOTSTRAP">
             <h4>JAIPUR</h4>
             <p style="text-align: justify;">Jaipur is a major tourist destination in India forming a part of the Golden
@@ -434,7 +132,7 @@
                 expensive hotel suites in 2012.</p>
             <a href="https://en.wikipedia.org/wiki/Jaipur">Read More</a>
         </div>
-        <div class="city" style="float: left;">
+        <div class="city">
             <img src="nanital.jpg" style="height: 230px;" alt="BOOTSTRAP">
             <h4>NANITAL</h4>
             <p style="text-align: justify;">
@@ -444,7 +142,7 @@
                 the place. According to one, Nainital has derived its name from the Goddess Naina</p>
             <a href="https://uttarakhandtourism.gov.in/destination/nainital/">Read More</a>
         </div>
-        <div class="city" style="float: left;">
+        <div class="city" >
             <img src="Kolkata.jpg" style="height: 230px;" alt="BOOTSTRAP">
             <h4>KOLKATA</h4>
             <p style="text-align: justify;">
@@ -454,22 +152,27 @@
                 riverine port. Kolkata is occasionally called the "Cultural capital of India".</p>
             <a href="https://en.wikipedia.org/wiki/List_of_tourist_attractions_in_Kolkata">Read More</a>
         </div>
+        </div>
     </div>
     <div id="hotel">
         <h1> FOR HOTEL BOOKING</h1>
+        <div class="hotelcontainer">
         <a href="https://www.oyorooms.com"> <img class="hotelsite" src="oyo.png" alt=""></a>
         <a href="https://www.makemytrip.com"><img class="hotelsite" src="makemytrip.png" alt=""></a>
         <a href="https://www.goibibo.com"> <img class="hotelsite" style="border: solid black; border-radius: 50%;"
                 src="goibibo.png" alt=""></a>
         <a href="https://www.trivago.in"> <img class="hotelsite" src="trivago.png" alt=""></a>
+        </div>
 
     </div>
     <div id="vehicle">
         <h1> FOR VEHICLE BOOKING</h1>
+        <div class="vehiclecontainer">
         <a href="https://www.redbus.in"> <img src="redbus.jpg" alt=""></a>
         <a href="https://www.makemytrip.com"><img src="yatra.jpg" alt=""></a>
         <a href="https://www.olacabs.com/"> <img src="ola.png" alt=""></a>
         <a href="https://www.uber.com/in/en/"> <img src="uber.png" alt=""></a>
+        </div>
 
     </div>
     <div id="contact">
