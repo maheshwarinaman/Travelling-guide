@@ -21,11 +21,10 @@ html {
     z-index: 2;
 }
 
-#header h2 {
+#header img {
     line-height: 70px;
-    float: left;
-    text-transform: uppercase;
-    color: white;
+    width:65px;
+    height:65px;
     font-size: 30px;
     margin-left: 20px;
 }
@@ -127,6 +126,7 @@ li a i {
 
 .city {
     width: 350px;
+    height:500px;
     border-radius: 7px;
     box-shadow: 0px 5px 5px darkgrey;
     background-color: #36D9AA;
@@ -171,6 +171,8 @@ li a i {
 
 .city p {
     line-height: 1.4;
+    height:200px;
+    overflow:auto;
 }
 
 .hotelsite {
@@ -231,10 +233,10 @@ li a i {
 .left {
     display: flex;
     float: left;
-    width: 58%;
-    margin: 8px 8px 8px 0px;
+    width: 56%;
+    height:570px;
+    margin: 8px 8px 8px 8px;
     padding: 8px;
-    height: 87%;
     color: red;
     background-color: #07A2A5;
 
@@ -250,9 +252,9 @@ li a i {
 
 }
 
-.history {
+.history, .culture, .festival {
     width: 100%;
-    height: 173px;
+    height: 183px;
     display: flex;
     justify-content: center;
     text-align: left;
@@ -268,35 +270,17 @@ li a i {
 }
 
 .culture {
-    width: 100%;
-    height: 173px;
-    display: flex;
-    justify-content: center;
-    text-align: left;
-    position: relative;
-    background-color: white;
     margin: 11px 0;
-    z-index: 1;
-
-}
-
-.festival {
-    width: 100%;
-    height: 173px;
-    display: flex;
-    justify-content: center;
-    text-align: left;
-    position: relative;
-    z-index: 1;
-
 }
 
 .right {
     float: right;
+    display: flex;
+    flex-direction: column;
     width: 40%;
     background-color: #04052E;
     height: 87%;
-    margin: 8px 8px 8px 8px;
+    margin: 8px 8px 8px 0px;
 
 }
 
@@ -359,10 +343,10 @@ li a i {
     display: inline-block;
     padding:10px;
 }
-@media(max-width: 1408px) {
+@media(max-width: 1068px) {
     
     .menu li a:hover {
-        background-color: firebrick;
+        background-color: darkslategray;
     }
     .submenu1{
         display:none;
@@ -375,23 +359,18 @@ li a i {
     #header{
         padding: 0 20px;
     }
-    .right{
-        width:100%;
-    }
-    .left{
-        width:100%;
-    }
 
     .menu {
         position: fixed;
         top: 0;
         right: -100%;
         width: 100%;
-        height: 75%;
-        background-color: black;
+        height: 100%;
+        background-color:firebrick;
         padding: 80px 0;
         line-height: normal;
         transition: .7s;
+        z-index: 1;
     }
 
     #chk:checked~.menu {
@@ -400,12 +379,12 @@ li a i {
 
     .menu li {
         display: block;
-        text-align: center;
-        width:100%;
     }
 
     .menu li a {
         display: block;
+        text-align: center;
+        width:100%;
         text-align: center;
     }
 
@@ -414,6 +393,48 @@ li a i {
         right: 20px;
         top: 10px;
     }
+    .submenu1 {
+        position: absolute;
+        background-color: darkslategray;
+        z-index: 2;
+        width: 35%;
+        left:65%;
+        top:0;
+        display: none;
+    }
+    .menu li:hover .submenu1 {
+        display: block;
+    }
+    .submenu1 li a:hover{
+        background-color: #0077b5;
+    }
     
 
+}
+@media(max-width:600px){
+    .right h2{
+        font-size: 30px;
+    }
+    .right{
+        width:97%;
+    }
+    .left{
+        width:97%;
+    }
+    #about::after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+
+}
+@media(min-width:900px) and (max-width:1199px){
+    .hotelsite{
+        width:360px;
+        height:360px;
+    }
+    #vehicle img{
+        width:360px;
+        height:360px;
+    }
 }
