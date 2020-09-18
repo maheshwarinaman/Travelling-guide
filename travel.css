@@ -412,7 +412,7 @@ li a i {
 
 }
 @media(max-width:600px){
-    .right h2{
+    .right  h2{
         font-size: 30px;
     }
     .right{
@@ -436,5 +436,12 @@ li a i {
     #vehicle img{
         width:360px;
         height:360px;
+    }
+    
+}
+@media(max-width:899px)
+{
+    .right h2{
+        font-size: 35px;
     }
 }
